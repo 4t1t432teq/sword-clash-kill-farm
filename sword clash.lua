@@ -139,6 +139,6 @@ iy.MouseButton1Click:Connect(function()
 end)
 
 while wait() do
+	wait(60)
 	game.Players.LocalPlayer.Character.Humanoid.Health = 0
-	wait(20)
 end
