@@ -132,7 +132,7 @@ end)
 iy.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
-
+anything = true
 while true do
 	wait(5)
 	local args = {
