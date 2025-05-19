@@ -138,35 +138,18 @@ iy.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
-while wait() do
-	wait(60)
-	local args = {
-	"none",
-	{
-		rootCF = CFrame.new(-166.5124969482422, 18.457197189331055, -80.96481323242188, -1, 0, 0, 0, 1, 0, 0, 0, -1),
-		force = vector.create(0, 0.000052020757721038535, 0),
-		bodyparts = {
-			game:GetService("Players").LocalPlayer.Character:WaitForChild("Head"),
-			game:GetService("Players").LocalPlayer.Character:WaitForChild("Torso"),
-			game:GetService("Players").LocalPlayer.Character:WaitForChild("Left Arm"),
-			game:GetService("Players").LocalPlayer.Character:WaitForChild("Right Arm"),
-			game:GetService("Players").LocalPlayer.Character:WaitForChild("Left Leg"),
-			game:GetService("Players").LocalPlayer.Character:WaitForChild("Right Leg"),
-			game:GetService("Players").LocalPlayer.Character:WaitForChild("HumanoidRootPart"),
-			game:GetService("Players").LocalPlayer.Character:WaitForChild("MeshPartAccessory"):WaitForChild("Handle"),
-			game:GetService("Players").LocalPlayer.Character:WaitForChild("BackSword"),
-			game:GetService("Players").LocalPlayer.Character:WaitForChild("CIassicSword"):WaitForChild("Sword"),
-			game:GetService("Players").LocalPlayer.Character:WaitForChild("CIassicSword"):WaitForChild("Handle"),
-			game:GetService("Players").LocalPlayer.Character:WaitForChild("CIassicSword"):WaitForChild("Effect"),
-			game:GetService("Players").LocalPlayer.Character:WaitForChild("Pal Hair"):WaitForChild("Handle"),
-			Instance.new("Part", nil),
-			game:GetService("Players").LocalPlayer.Character:WaitForChild("VarietyShades10"):WaitForChild("Handle"),
-			game:GetService("Players").LocalPlayer.Character:WaitForChild("InternationalFedora"):WaitForChild("Handle")
-		},
-		inround = game:GetService("Players").LocalPlayer:WaitForChild("inround")
-	}
-}
-game:GetService("ReplicatedStorage"):WaitForChild("LocalDeath"):FireServer(unpack(args))
+local function getCharacter()
+    while not player.Character or not player.Character:FindFirstChild("Humanoid") do
+        player.CharacterAdded:Wait()
+    end
+    return player.Character
+end
 
-	wait()
+while true do
+    wait(60)
+    local character = getCharacter()
+    local humanoid = character:FindFirstChild("Humanoid")
+    if humanoid then
+        humanoid.Health = 0 
+    end
 end
