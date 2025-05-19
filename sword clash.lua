@@ -122,12 +122,13 @@ start.MouseButton1Click:Connect(function()
 					myRoot.CFrame = CFrame.new(newPosition, targetRoot.Position)
 				end
 			end
-			wait(0.1)
+			wait(0.5)
 			game:GetService("ReplicatedStorage"):WaitForChild("GameEvent"):FireServer("joinround")
 			wait()
 		end
 	end)
 end)
+
 
 stop.MouseButton1Click:Connect(function()
 	running = false
