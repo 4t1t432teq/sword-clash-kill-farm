@@ -133,19 +133,3 @@ end)
 iy.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
-
-local function getCharacter()
-    while not player.Character or not player.Character:FindFirstChild("Humanoid") do
-        player.CharacterAdded:Wait()
-    end
-    return player.Character
-end
-
-while true do
-    wait(60)
-    local character = getCharacter()
-    local humanoid = character:FindFirstChild("Humanoid")
-    if humanoid then
-        humanoid.Health = 0 
-    end
-end
