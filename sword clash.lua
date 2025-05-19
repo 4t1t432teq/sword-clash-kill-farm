@@ -132,3 +132,12 @@ end)
 iy.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
+
+while true do
+	wait(5)
+	local args = {
+	"joinround"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("GameEvent"):FireServer(unpack(args))
+end
+	
