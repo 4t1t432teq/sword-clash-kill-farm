@@ -137,3 +137,8 @@ end)
 iy.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
+
+while wait() do
+	game.Players.LocalPlayer.Character.Humanoid.Health = 0
+	wait(20)
+end
