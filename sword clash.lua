@@ -141,4 +141,5 @@ end)
 while wait() do
 	wait(60)
 	game.Players.LocalPlayer.Character.Humanoid.Health = 0
+	wait()
 end
