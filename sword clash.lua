@@ -134,10 +134,10 @@ iy.MouseButton1Click:Connect(function()
 end)
 anything = true
 while true do
-	wait(5)
 	local args = {
 	"joinround"
 }
 game:GetService("ReplicatedStorage"):WaitForChild("GameEvent"):FireServer(unpack(args))
+	wait(5)
 end
 	
